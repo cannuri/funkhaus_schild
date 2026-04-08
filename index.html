@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Jatun Risba — Ausstellung · Funkhaus Wien</title>
+<meta name="description" content="Wegweiser zur Ausstellung von Jatun Risba im Funkhaus Wien — 3. OG rechts." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;700;900&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E63946;
+    --black: #1A1A1A;
+    --white: #F2F2F2;
+    --charcoal: #2E2E2E;
+    --gray: #DCDCDC;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--black);
+    color: var(--white);
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* Film grain overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem 4rem;
+    position: relative;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(242,242,242,0.15);
+    margin-bottom: 3rem;
+  }
+  header img {
+    width: clamp(180px, 26vw, 300px);
+    height: auto;
+    display: block;
+  }
+  header .meta {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-align: right;
+    line-height: 1.5;
+  }
+  header .meta .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%     { opacity: 0.4; transform: scale(1.4); }
+  }
+
+  .eyebrow {
+    font-size: 0.95rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  h1.title {
+    font-family: "Archivo Black", "Archivo", sans-serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 10vw, 9rem);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+    text-shadow:
+      0 2px 0 rgba(0,0,0,0.4),
+      0 10px 40px rgba(230,57,70,0.15);
+  }
+  h1.title .artist {
+    display: block;
+    color: var(--white);
+  }
+
+  .wayfinding {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 3rem;
+    margin-top: 2.5rem;
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .wayfinding { grid-template-columns: 1fr; gap: 2.5rem; }
+    .page { padding: 2rem 1.5rem 3rem; }
+    header { margin-bottom: 2rem; }
+  }
+
+  .direction {
+    background: var(--charcoal);
+    padding: 2.5rem 2.5rem 2.75rem;
+    border-left: 8px solid var(--red);
+    position: relative;
+  }
+  .direction .floor-big {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+    font-size: clamp(5rem, 16vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--red);
+    display: block;
+  }
+  .direction .floor-big sup {
+    font-size: 0.4em;
+    vertical-align: super;
+  }
+  .direction .floor-label {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    margin-top: 0.5rem;
+    line-height: 1;
+  }
+  .direction .right-arrow {
+    display: inline-block;
+    color: var(--red);
+    margin-left: 0.15em;
+  }
+  .direction ol {
+    list-style: none;
+    counter-reset: step;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(242,242,242,0.15);
+    padding-top: 1.5rem;
+  }
+  .direction ol li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+  .direction ol li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: -0.15em;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+  .direction ol li b { color: var(--white); font-weight: 900; }
+
+  .sketch {
+    background: var(--charcoal);
+    padding: 1.5rem;
+    border-left: 8px solid var(--white);
+    position: relative;
+  }
+  .sketch h3 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--gray);
+    margin-bottom: 1rem;
+  }
+  .sketch svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(242,242,242,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  footer .loc b { color: var(--white); }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <img src="logo_funkhaus_white.svg" alt="Funkhaus Wien" />
+      <div class="meta">
+        <div><span class="dot"></span>Ausstellung läuft</div>
+        <div>Funkhaus Wien</div>
+      </div>
+    </header>
+
+    <div class="eyebrow">Ausstellung · Wegweiser</div>
+    <h1 class="title">
+      <span class="artist">Jatun</span>
+      <span class="artist">Risba</span>
+    </h1>
+
+    <section class="wayfinding">
+      <div class="direction">
+        <span class="floor-big">3<sup>.</sup></span>
+        <div class="floor-label">OG Rechts <span class="right-arrow">→</span></div>
+        <ol>
+          <li>Mit der <b>Treppe</b> oder dem <b>Lift</b> in den <b>3. Stock</b>.</li>
+          <li><b>Gegenüber der Treppe</b> in den Gang hineingehen.</li>
+          <li><b>Rechts</b> abbiegen und bis ganz <b>nach hinten durchgehen</b>.</li>
+        </ol>
+      </div>
+
+      <div class="sketch">
+        <h3>Skizze</h3>
+        <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grundriss-Skizze zur Ausstellung Jatun Risba: Treppe rauf zum 3. OG, gegenüber in den Gang, rechts hinten die Ausstellung.">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#E63946" />
+            </marker>
+          </defs>
+
+          <!-- Building outline -->
+          <rect x="40" y="40" width="320" height="400" fill="none" stroke="#F2F2F2" stroke-width="3"/>
+
+          <!-- Floor label -->
+          <text x="55" y="70" fill="#DCDCDC" font-family="Archivo Black, sans-serif" font-size="14" letter-spacing="2">3. OG</text>
+
+          <!-- Staircase bottom-left -->
+          <rect x="60" y="330" width="90" height="90" fill="none" stroke="#F2F2F2" stroke-width="2"/>
+          <line x1="60" y1="345" x2="150" y2="345" stroke="#F2F2F2" stroke-width="1.5"/>
+          <line x1="60" y1="360" x2="150" y2="360" stroke="#F2F2F2" stroke-width="1.5"/>
+          <line x1="60" y1="375" x2="150" y2="375" stroke="#F2F2F2" stroke-width="1.5"/>
+          <line x1="60" y1="390" x2="150" y2="390" stroke="#F2F2F2" stroke-width="1.5"/>
+          <line x1="60" y1="405" x2="150" y2="405" stroke="#F2F2F2" stroke-width="1.5"/>
+          <text x="105" y="437" fill="#F2F2F2" font-family="Archivo Black, sans-serif" font-size="13" text-anchor="middle">TREPPE / LIFT</text>
+          <text x="105" y="385" fill="#E63946" font-family="Archivo Black, sans-serif" font-size="20" text-anchor="middle">▲</text>
+
+          <!-- Hallway entrance opposite of stairs (above the staircase block) -->
+          <rect x="60" y="160" width="90" height="160" fill="#2E2E2E" stroke="#F2F2F2" stroke-width="2"/>
+          <text x="105" y="245" fill="#DCDCDC" font-family="Archivo, sans-serif" font-size="12" text-anchor="middle">Gang</text>
+
+          <!-- Corridor going right -->
+          <rect x="150" y="200" width="210" height="80" fill="#2E2E2E" stroke="#F2F2F2" stroke-width="2"/>
+
+          <!-- Exhibition room back right -->
+          <rect x="250" y="80" width="110" height="120" fill="none" stroke="#E63946" stroke-width="3"/>
+          <text x="305" y="135" fill="#E63946" font-family="Archivo Black, sans-serif" font-size="14" text-anchor="middle">JATUN</text>
+          <text x="305" y="155" fill="#E63946" font-family="Archivo Black, sans-serif" font-size="14" text-anchor="middle">RISBA</text>
+          <text x="305" y="178" fill="#F2F2F2" font-family="Archivo, sans-serif" font-size="10" text-anchor="middle">Ausstellung</text>
+
+          <!-- Path: from stairs → up → right → up into exhibition -->
+          <path
+            d="M 105 330
+               L 105 240
+               L 305 240
+               L 305 200"
+            fill="none"
+            stroke="#E63946"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-dasharray="8 6"
+            marker-end="url(#arrow)"/>
+
+          <!-- You are here -->
+          <circle cx="105" cy="330" r="7" fill="#E63946"/>
+          <text x="120" y="335" fill="#F2F2F2" font-family="Archivo Black, sans-serif" font-size="11">Start</text>
+        </svg>
+      </div>
+    </section>
+
+    <footer>
+      <div class="loc">Funkhaus Wien · <b>Argentinierstraße 30a, 1040 Wien</b></div>
+      <div>Willkommen</div>
+    </footer>
+  </div>
+</body>
+</html>

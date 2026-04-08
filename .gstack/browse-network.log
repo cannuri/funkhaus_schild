@@ -1,0 +1,5 @@
+[2026-04-08T18:39:34.903Z] GET http://127.0.0.1:8765/index.html → 200 (16ms, 10153B)
+[2026-04-08T18:39:34.926Z] GET https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;700;900&family=Archivo+Black&display=swap → 200 (258ms, 6347B)
+[2026-04-08T18:39:34.927Z] GET http://127.0.0.1:8765/logo_funkhaus_white.svg → 200 (18ms, 1813B)
+[2026-04-08T18:39:35.244Z] GET https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxKsv4Rn.woff2 → pending (?ms, ?B)
+[2026-04-08T18:39:35.244Z] GET https://fonts.gstatic.com/s/archivoblack/v23/HTxqL289NzCGg4MzN6KJ7eW6CYyF_jzx13E.woff2 → pending (?ms, ?B)
